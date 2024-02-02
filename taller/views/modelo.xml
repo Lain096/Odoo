@@ -1,0 +1,59 @@
+<odoo>
+    <data>
+
+
+    <record model="ir.ui.view" id="taller_modelo_list">
+      <field name="name">taller.modelo.list</field>
+      <field name="model">taller.modelo</field>
+      <field name="arch" type="xml">
+        <tree name= "modeloaalist">
+          <field name="modelo"/>
+          <field name="brand"/>
+          </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="taller_modelo_form">
+      <field name="name">taller.modelo.list</field>
+      <field name="model">taller.modelo</field>
+      <field name="arch" type="xml">
+        <form name ="modeloaform">
+          <sheet>
+            <group name = "group_top">
+              <group name ="group_left">
+                <field name="modelo"/>
+                <field name="brand"/>
+              </group>
+              <group name="group_right">
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+
+
+<!--
+        <template id="listing">
+          <ul>
+            <li t-foreach="objects" t-as="object">
+              <a t-attf-href="#{ root }/objects/#{ object.id }">
+                <t t-esc="object.display_name"/>
+              </a>
+            </li>
+          </ul>
+        </template>
+        <template id="object">
+          <h1><t t-esc="object.display_name"/></h1>
+          <dl>
+            <t t-foreach="object._fields" t-as="field">
+              <dt><t t-esc="field"/></dt>
+              <dd><t t-esc="object[field]"/></dd>
+            </t>
+          </dl>
+        </template>
+-->
+    </data>
+</odoo>

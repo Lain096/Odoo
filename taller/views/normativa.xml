@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+
+
+    <record model="ir.ui.view" id="taller_normativa_list">
+      <field name="name">taller.normativa.list</field>
+      <field name="model">taller.normativa</field>
+      <field name="arch" type="xml">
+        <tree name= "normativaaalist">
+          <field name="name"/>
+          <field name="month"/>
+          <field name="year"/>
+          </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="taller_normativa_form">
+      <field name="name">taller.normativa.list</field>
+      <field name="model">taller.normativa</field>
+      <field name="arch" type="xml">
+        <form name ="normativaaform">
+          <sheet>
+            <group name = "group_top">
+              <group name ="group_left">
+                <field name="name"/>
+               
+              </group>
+              <group name="group_right">
+                <field name="month"/>
+                <field name="year"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+ <record model="ir.actions.act_window" id="normativa_action_window">
+      <field name="name">normativa</field>
+      <field name="res_model">taller.normativa</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          normativa
+        </p>
+        <p>
+          Click 'Crear' para crear la clase
+        </p>
+      </field>
+    </record>
+
+
+<!--
+        <template id="listing">
+          <ul>
+            <li t-foreach="objects" t-as="object">
+              <a t-attf-href="#{ root }/objects/#{ object.id }">
+                <t t-esc="object.display_name"/>
+              </a>
+            </li>
+          </ul>
+        </template>
+        <template id="object">
+          <h1><t t-esc="object.display_name"/></h1>
+          <dl>
+            <t t-foreach="object._fields" t-as="field">
+              <dt><t t-esc="field"/></dt>
+              <dd><t t-esc="object[field]"/></dd>
+            </t>
+          </dl>
+        </template>
+-->
+    </data>
+</odoo>

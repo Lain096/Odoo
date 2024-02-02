@@ -1,0 +1,98 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="taller_certificado_list">
+      <field name="name">taller.certificado.list</field>
+      <field name="model">taller.certificado</field>
+      <field name="arch" type="xml">
+        <tree name= "certificadoaalist">
+          <field name="name"/>
+          </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="taller_certificado_form">
+      <field name="name">taller.certificado.list</field>
+      <field name="model">taller.certificado</field>
+      <field name="arch" type="xml">
+        <form name ="certificadoaform">
+          <sheet>
+            <group name = "group_top">
+              <group name ="group_left">
+                <field name="name"/>
+              </group>
+              <group name="group_right">
+                <field name="image_url" widget="image_url" class="oe_avatar" options="{'size': [128,128]}" modifiers="{&quot;readonly&quot;: true}"/> <!-- esto lo coge de odoo, literalmente copia la linea que hay en configuracion -> click en el tipo de cambio -> por pais -> click der en la bandera del pais -> view  -->
+                  <!-- Aqui arriba ha cambiado el nombre y widget para que se asemeje a la url del csv-->
+                  <!-- Al final, el csv se importa desde el propio odoo, en la pestaña dentro de donde lo quieres importar, en nuestro caso taller -> certificados, clic en favoritos y luego clic en importar-->
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+
+    <record model="ir.actions.act_window" id="emisiones_action_window">
+      <field name="name">certificado</field>
+      <field name="res_model">taller.certificado</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          certificado
+        </p>
+        <p>
+          Click 'Crear' para crear la clase
+        </p>
+      </field>
+    </record>
+
+
+
+
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="taller.action_window">
+      <field name="name">taller window</field>
+      <field name="res_model">taller.taller</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="taller.action_server">
+      <field name="name">taller server</field>
+      <field name="model_id" ref="model_taller_taller"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="taller" id="taller.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="taller.menu_1" parent="taller.menu_root"/>
+    <menuitem name="Menu 2" id="taller.menu_2" parent="taller.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="taller.menu_1_list" parent="taller.menu_1"
+              action="taller.action_window"/>
+    <menuitem name="Server to list" id="taller" parent="taller.menu_2"
+              action="taller.action_server"/>
+-->
+  </data>
+</odoo>

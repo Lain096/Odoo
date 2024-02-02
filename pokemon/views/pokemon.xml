@@ -1,0 +1,57 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="pokemon_pokemon_list">
+      <field name="name">pokemon.pokemon.list</field>
+      <field name="model">pokemon.pokemon</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nickname"/>
+          <!--<field name = "ability"/>-->
+          <field name="trainer"/>
+          <field name="state"/>
+          <field name="specie"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="pokemon_pokemon_form">
+      <field name="name">pokemon.pokemon.form</field>
+      <field name="model">pokemon.pokemon</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group name="group_top">
+                <field name="nickname" placeholder="Nombre del Pokemon"/>
+               
+              <group name="group_left">       
+                <group name="group_left">
+                  <field name="specie" />
+                  <field name="type_1"/>
+                  <field name="type_2"/>
+                </group>
+                <group name="group_right">
+                  <field name="state"/>
+                  <!--<field name = "ability"/>-->
+                </group>
+              </group>
+              <group name ="group_right">
+                <field name="atk"/>
+                <field name="hp"/>
+                <field name="defense"/>
+              </group>
+            </group>
+          </sheet>       
+        </form>
+      </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="pokemon_action_window">
+      <field name="name">pokemon</field>
+      <field name="res_model">pokemon.pokemon</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+  </data> 
+</odoo>

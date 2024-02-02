@@ -1,0 +1,55 @@
+ <!-- Menú root-->
+ <odoo>
+    <data>
+        <menuitem id ="menu_taller_root"
+            name ="Taller"
+            sequence="11"
+        />
+
+ <!-- Menú marca y modelo-->
+        <menuitem id ="menu_marca_y_modelo_root"
+        name ="Marca y Modelo"
+        sequence="1"
+        parent="menu_taller_root"
+        />
+
+
+        <menuitem id ="menu_marca_template"
+        name ="Marca"
+        sequence="1"
+        parent="menu_marca_y_modelo_root"
+        action="marca_action_window"
+        />
+
+        <menuitem id ="menu_modelo_template"
+        name ="Modelo"
+        sequence="2"
+        parent="menu_marca_y_modelo_root"
+        action="marca_action_window"/>
+
+ <!-- Normativa y emisiones-->
+
+       <menuitem id ="menu_normativa_emisiones_root"
+        name ="Normativa y Emisiones"
+        sequence="2"
+        parent="menu_taller_root"
+        />
+
+
+        <menuitem id ="menu_normativa_template"
+        name ="Normativa"
+        sequence="1"
+        parent="menu_normativa_emisiones_root"
+        action="normativa_action_window"
+        />
+
+        <menuitem id ="menu_emisiones_template"
+        name ="Emisiones"
+        sequence="2"
+        parent="menu_normativa_emisiones_root"
+        action="emisiones_action_window"/>
+
+
+
+    </data>
+</odoo>
